@@ -30,7 +30,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # Copy dependencies
-COPY ./poetry.lock ./pyproject.toml ./
+COPY ./pyproject.toml ./
+COPY ./poetry.lock* ./
 
 # Create virtual environment
 RUN python -m venv $VENV_PATH
